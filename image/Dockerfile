@@ -3,7 +3,7 @@ FROM ruby:alpine3.12 as base
 LABEL maintainer="summer.gan@ringcentral.com"
 
 # install node
-ENV NODE_VERSION 11
+ENV NODE_VERSION 12.18.4
 RUN apk update \
     && apk add --no-cache yarn git bzip2 unzip nodejs nodejs-npm alpine-sdk
 
