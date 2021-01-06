@@ -28,7 +28,5 @@ jobs:
           IMAGE_NAME=ringcentral/ruby-node
           VERSION="$(awk -F ' '  '/ENV NODE_VERSION/ {print $3}' Dockerfile)"
           docker build --tag ${IMAGE_NAME} --file Dockerfile .
-          docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}"
           docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:latest"
-          docker push "${IMAGE_NAME}:${VERSION}"
           docker push "${IMAGE_NAME}:latest"
