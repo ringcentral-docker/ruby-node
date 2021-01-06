@@ -3,7 +3,7 @@ name: Build node-ruby
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       # '*' matches any character except '/'
       - 'image/*'

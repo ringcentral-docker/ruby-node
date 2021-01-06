@@ -3,7 +3,7 @@ name: Build node-ruby
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       # '*' matches any character except '/'
       - 'image/*'
@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Docker login
         env:
           DOCKER_HUB_USERNAME: ${{ secrets. DOCKER_HUB_USERNAME }} 
