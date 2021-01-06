@@ -5,7 +5,7 @@ LABEL maintainer="summer.gan@ringcentral.com"
 # install node
 ENV NODE_VERSION 11
 RUN apk update \
-    && apk add --no-cache yarn git bzip2 unzip nodejs=${NODE_VERSION} nodejs-npm alpine-sdk
+    && apk add --no-cache yarn git bzip2 unzip nodejs nodejs-npm alpine-sdk
 
 # NPM install
 RUN npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/  \
@@ -15,7 +15,7 @@ RUN npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/  \
 # Show version
 RUN node --version \
     && npm version && git --version && ruby -v
-    
+
 # RUN apt-get install -y curl \
 #   && curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
 #   && apt-get install -y nodejs \
