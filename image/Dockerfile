@@ -3,9 +3,9 @@ FROM ruby:alpine3.12 as base
 LABEL maintainer="summer.gan@ringcentral.com"
 
 # install node
-ENV NODE_VERSION 12.18.4
+ENV NODE_VERSION 10.19.0
 RUN apk update \
-    && apk add --no-cache yarn git bzip2 unzip nodejs nodejs-npm alpine-sdk
+    && apk add --no-cache yarn=1.21.1 git bzip2 unzip nodejs=10.19.0 nodejs-npm=10.19.0 alpine-sdk
 
 # NPM install
 RUN npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/  \
