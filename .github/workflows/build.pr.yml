@@ -1,0 +1,25 @@
+name: Build node-ruby
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      # '*' matches any character except '/'
+      - 'image/*'
+      - '.github/workflows/*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Build Image
+        run: |
+          cd image
+          IMAGE_NAME=ringcentral/node-ruby
+          VERSION="$(awk -F ' '  '/ENV NODE_VERSION/ {print $3}' Dockerfile)"
+          docker build --tag ${IMAGE_NAME} --file Dockerfile .
+          docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}"
+          docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:latest"
