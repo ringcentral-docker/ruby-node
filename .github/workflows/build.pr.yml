@@ -1,9 +1,9 @@
-name: Build node-ruby
+name: Build ruby-node
 
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       # '*' matches any character except '/'
       - 'image/*'
