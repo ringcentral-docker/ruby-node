@@ -3,7 +3,6 @@
 # LABEL maintainer="summer.gan@ringcentral.com"
 
 # # install node
-# ENV NODE_VERSION 10.19.0
 # RUN apk update \
 #     && apk add --no-cache yarn=1.21.1 git bzip2 unzip nodejs=10.19.0 nodejs-npm=10.19.0 alpine-sdk
 
@@ -11,13 +10,13 @@
 # RUN npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/  \
 #   && npm config set registry https://registry.npm.taobao.org  \
 #   && npm cache clean --force
-FROM node:10.19-jessie AS nodejs
+FROM node:14 AS nodejs
 
 FROM ruby:2
 
 ENV LANG C.UTF-8
 
-ENV NODE_VERSION 10
+ENV NODE_VERSION 14
 
 # RUN groupadd --gid 1000 node \
 #   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
