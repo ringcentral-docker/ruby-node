@@ -10,7 +10,7 @@
 # RUN npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/  \
 #   && npm config set registry https://registry.npm.taobao.org  \
 #   && npm cache clean --force
-FROM node:14 AS nodejs
+FROM node:14.20.0 AS nodejs
 
 FROM ruby:2
 
