@@ -10,13 +10,13 @@
 # RUN npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/  \
 #   && npm config set registry https://registry.npm.taobao.org  \
 #   && npm cache clean --force
-FROM node:20.10.0 AS nodejs
+FROM node:20.12.0 AS nodejs
 
 FROM ruby:2
 
 ENV LANG C.UTF-8
 
-ENV NODE_VERSION 20
+ENV NODE_VERSION 20.12.0
 
 # RUN groupadd --gid 1000 node \
 #   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
